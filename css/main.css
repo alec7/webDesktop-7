@@ -1,0 +1,589 @@
+/* ==========================================================================
+   yep all from scratch!, don't be offended!
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css?family=Dosis:300,400,700|Oxygen:300,400,700|Ubuntu:300,400,700');
+/*
+font-family: 'Ubuntu', sans-serif;
+font-family: 'Dosis', sans-serif;
+font-family: 'Oxygen', sans-serif;
+*/
+
+html {
+}
+
+body {
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: #000;
+    color: #bababa;
+    font-family: 'Oxygen', sans-serif;
+}
+
+nav {
+    display: none;
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    bottom: 35px;
+    left: 0;
+    background: rgba(255, 255, 255, 0.39);
+}
+
+nav ul {
+    position: relative;
+    list-style: none;
+    float: none;
+    display: block;
+    margin: 0 auto;
+    height: 50px;
+    width: 100%;
+    padding: 0;
+    text-align: center;
+}
+
+nav li {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    /* float: left; */
+    margin: 0 10px;
+    -webkit-transition: all .6s;
+    -moz-transition: all .6s;
+    -ms-transition: all .6s;
+    -o-transition: all .6s;
+    transition: all .6s;
+    cursor: pointer;
+    position: relative;
+}
+
+nav .k li:hover {
+    height: 70px;
+    width: 70px;
+    margin-top: -20px;
+    -webkit-transition: all .6s;
+    -moz-transition: all .6s;
+    -ms-transition: all .6s;
+    -o-transition: all .6s;
+    transition: all .6s;
+}
+
+nav li span title {
+    display: block;
+    position: absolute;
+    top: -20px;
+    width: 100%;
+    opacity: 0;
+}
+
+nav li span title::first-letter {
+    text-transform: capitalize;
+}
+
+nav li span {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 50px;
+    -webkit-transition: all .6s;
+    -moz-transition: all .6s;
+    -ms-transition: all .6s;
+    -o-transition: all .6s;
+    transition: all .6s;
+}
+
+nav li span:hover {
+    height: 70px;
+    width: 70px;
+    margin: -20px -10px;
+    -webkit-transition: all .6s;
+    -moz-transition: all .6s;
+    -ms-transition: all .6s;
+    -o-transition: all .6s;
+    transition: all .6s;
+}
+
+nav li span:hover title {
+    opacity: 1;
+    -webkit-transition: all .6s;
+    -moz-transition: all .6s;
+    -ms-transition: all .6s;
+    -o-transition: all .6s;
+    transition: all .6s;
+}
+
+nav li span.sh1 {
+    height: 60px;
+    width: 60px;
+    margin: -10px -5px;
+    -webkit-transition: all .9s;
+    -moz-transition: all .9s;
+    -ms-transition: all .9s;
+    -o-transition: all .9s;
+    transition: all .9s;
+}
+
+nav li span.sh1 title {
+    opacity: .3;
+    -webkit-transition: all .9s;
+    -moz-transition: all .9s;
+    -ms-transition: all .9s;
+    -o-transition: all .9s;
+    transition: all .9s;
+}
+
+nav li span.sh2 {
+    height: 55px;
+    width: 55px;
+    margin: -5px -2px;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+}
+
+nav li span.sh2 title {
+    opacity: .1;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+}
+
+nav li a {
+}
+
+#taskbar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 35px;
+    width: 100%;
+    background: #3b3b3b;
+    z-index: 9;
+}
+
+#taskbar > ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    height: 100%;
+    width: calc(100% - 115px);
+    overflow: hidden;
+    margin-left: 50px;
+}
+
+#taskbar > ul > li {
+    height: 35px;
+    width: 160px;
+    display: block;
+    float: left;
+    padding: 5px 0 0 10px;
+    background: #303030;
+    margin: 0 1px;
+    -webkit-transition: all .6s;
+    -moz-transition: all .6s;
+    -ms-transition: all .6s;
+    -o-transition: all .6s;
+    transition: all .6s;
+}
+
+#taskbar > ul > li:hover {
+    background: #444;
+}
+
+#taskbar > ul > li:active {
+    background: #252525;
+}
+
+#taskbar > ul > li:focus {
+    background: #252525;
+    border: 1px solid #ccc;
+    box-shadow: none;
+}
+
+#taskbar > ul > li span {
+    height: 24px;
+    width: 120px;
+    padding-right: 96px;
+    display: inline-block;
+    /* margin: 14px 0 0 0; */
+    position: relative;
+}
+
+#taskbar > ul > li title::first-letter {
+    text-transform: capitalize;
+}
+
+#taskbar > ul > li title {
+    display: block;
+    position: absolute;
+    left: 34px;
+    top: calc(50% - 9px);
+    width: 110px;
+    overflow: hidden;
+    cursor: default;
+}
+
+#desktop {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #f9f9f9;
+    background-image: url(../img/background/bg.jpg);
+    background-size: contain;
+    z-index: 0;
+    overflow: hidden;
+}
+
+#desktop .window {
+    position: absolute;
+    top: 100px;
+    left: 190px;
+    width: 500px;
+    height: 250px;
+    /* background: #fff; */
+    border: 1px solid #3b3b3b;
+    box-shadow: 1px 1px 3px 0px #616161;
+}
+
+#desktop .head {
+    position: absolute;
+    height: 30px;
+    width: 100%;
+    background: rgba(59, 59, 59, 0.88);
+    color: #ccc;
+}
+#desktop .window .wbody{
+    position: absolute;
+    top: 30px;
+    left: 0;
+    height: calc(100% - 30px);
+    width: 100%;
+    background: rgba(255, 255, 255, 0.73);
+}
+#desktop .window .wbody iframe{
+    height: 100%;
+    width: 100%;
+    border: none;
+}
+
+#desktop .head .icon {
+    width: 24px;
+    height: 24px;
+    display: block;
+    margin: 3px 5px;
+    float: left;
+}
+
+#desktop .head .title {
+    display: block;
+    float: left;
+    height: 24px;
+    width: calc(100% - 126px);
+    margin: 3px 5px;
+    cursor: default;
+}
+
+#desktop .head .controlbox {
+    display: block;
+    float: left;
+    height: 16px;
+    width: 82px;
+}
+
+#desktop .head .controlbox span {
+    display: block;
+    width: calc(33% - 1px);
+    height: 100%;
+    float: right;
+    margin: 0 0 0 1px;
+}
+
+#desktop .head .controlbox .close {
+    background: #ff0000;
+    width: calc(40% - 3px);
+}
+
+#desktop .head .controlbox .max {
+    background: #2f424c;
+    width: 30%;
+}
+
+#desktop .head .controlbox .min {
+    background: #585858;
+    width: 30%;
+}
+
+#desktop .desktop-icons {
+    display: block;
+    list-style: none;
+    height: 100%;
+    /* width: 50px; */
+    float: left;
+    padding: 20px 0 0 19px;
+    /* overflow: hidden; */
+}
+#desktop .desktop-icons li{
+    height: 70px;
+    width: 50px;
+}
+#desktop .desktop-icons li:hover{}
+#desktop .desktop-icons li .icon{
+    display: block;
+    height: 50px;
+    width: 100%;
+    padding: 6px;
+    background: rgba(199, 199, 199, 0.81);
+    border-radius: 7px;
+    /* border: 1px solid #4c4c4c; */
+    box-shadow: 0px 0px 2px 0px #0a0a0a;
+}
+#desktop .desktop-icons li .title{
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 10px;
+    overflow: hidden;
+    height: 13px;
+    background: rgba(255, 255, 255, 0.13);
+    margin-top: 3px;
+}
+
+
+.window .reshandler{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    height: 16px;
+    width: 16px;
+    cursor: se-resize;
+    background-image: url(images/ui-icons_ffffff_256x240.png);
+    background-position: -64px -224px;
+}
+
+.window .res-n{
+    position: absolute;
+    background-color: red;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    cursor: n-resize;
+}
+.window .res-s{
+    position: absolute;
+    background-color: red;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    cursor: s-resize;
+}
+.window .res-e{
+    position: absolute;
+    background-color: red;
+    top: 0;
+    right: 0;
+    width: 5px;
+    height: 100%;
+    cursor: e-resize;
+}
+.window .res-w{
+    position: absolute;
+    background-color: red;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    cursor: w-resize;
+}
+
+.notification {
+    display: block;
+    height: 70px;
+    width: 220px;
+    background-color: rgba(74, 74, 74, 0.88);
+    position: absolute;
+    right: 20px;
+    bottom: 55px;
+    color: white;
+    border: 1px solid #636363;
+    border-radius: 3px;
+    font-weight: lighter;
+    overflow: hidden;
+}
+.notification title{
+    display: block;
+    font-weight: bolder;
+    font-size: 12px;
+    padding: 2px 0 2px 9px;
+    color: #cacaca;
+    text-shadow: 1px 1px 2px #737373;
+    border-bottom: 1px solid #4e4e4e;
+    box-shadow: 0px 1px 2px #2d2d2d;
+}
+.notification .message{
+    font-size: 11px;
+    font-family: "Ubuntu";
+    font-weight: lighter;
+    padding: 5px;
+    display: block;
+    text-shadow: 2px 2px 1px #000;
+    z-index: 5;
+    position: relative;
+}
+.notification .icon{
+    display: block;
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    bottom: -10px;
+    right: -10px;
+    opacity: .2;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.clear {
+    display: block;
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    color: #ccc;
+    top: 3px;
+    right: 5px;
+    cursor: pointer;
+    /* background: rebeccapurple; */
+}
+
+.datetime {
+    height: 35px;
+    width: 80px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #3b3b3b;
+    border-left: 1px solid #4a4949;
+}
+.datetime span{
+    display: block;
+    height: 50%;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    padding: 2px;
+    cursor: default;
+}
+.datetime .time{}
+.datetime .date{}
+
+.launcher {height: 35px;width: 50px;display: inline-block;position: absolute;left: 0;bottom: 0;}
+
+.trigger {position: relative;height: 100%;width: 100%;text-align: center;padding-top: 6px;}
+.trigger:hover{
+    background: #444343;
+}
+.trigger:focus, .trigger:active, .trigger.active{
+    background: #585858;
+}
+.launcher ul {
+    display: none;
+    list-style: none;
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    height: 500px;
+    width: 500px;
+    padding: 10px;
+    background: rgba(59, 59, 59, 0.95);
+}
+.launcher li {
+    height: 50px;
+    width: 50px;
+    float: left;
+    margin: 7px;
+    /* background: #fbfbfb; */
+    /* padding: 5px; */
+    /* border-radius: 6px; */
+    /* box-shadow: 1px 1px 2px #000; */
+}
+.launcher li .icon{
+    height: 100%;
+    width: 100%;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    float: none;
+    background: #ececec;
+    margin: 0 auto;
+    padding: 5px;
+    border-radius: 5px;
+}
+.launcher li .title{
+    display: block;
+    font-family: "Ubuntu";
+    text-align: center;
+    overflow: hidden;
+    padding: 0;
+    background: #232221;
+    color: #a7a5a5;
+    margin-top: 2px;
+    line-height: 13px;
+    font-size: 11px;
+    border-radius: 1px;
+}
+
+.context-menu {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: auto;
+    color: #585757;
+    background: rgba(255, 255, 255, 0.93);
+    z-index: 9999999;
+    padding: 0;
+    min-width: 140px;
+    max-width: 200px;
+    list-style: none;
+    font-family: "Dosis";
+}
+.context-menu li{
+    margin: 0 0 2px;
+    padding: 0 0 0 7px;
+    cursor: default;
+}
+.context-menu li:hover{
+    background: rgba(218, 218, 218, 0.77);
+}
+
+
+
+
+
+/*window settings*/
+.list-settings {
+    display: table;
+    list-style: none;
+    height: 100%;
+    width: 100%;
+    background: white;
+    min-height: 100%;
+    padding: 0;
+}
+@media handheld {
+
+}
+.list-settings li{}
+
+.setting {display: block;height: 100%;width: 100%;color: #212121;}
+
